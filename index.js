@@ -15,7 +15,7 @@ client.on("message", async message => {
         var mentionnum = 0;
         for(e in mentions)
         {
-            const pingmsg = `***<@${message.author.id}>*** pinged ***<@${mentions[mentionnum].id}>*** in ***${message.channel}*** on ***${message.createdAt.getFullYear()}/${message.createdAt.getMonth()}/${message.createdAt.getDay()}*** (yyyy/mm/dd) at ***${message.createdAt.getHours()}:${message.createdAt.getMinutes()}:${message.createdAt.getSeconds()}*** (hh/mm/ss)`
+            const pingmsg = `***<@${message.author.id}>*** pinged ***<@${mentions[mentionnum].id}>*** in ***${message.channel}*** on ***${message.createdAt.toISOString()}***`
             let channel = message.guild.channels.cache.find(ch => ch.name === logchannel)
             channel.send(pingmsg);
             mentionnum += 1;
